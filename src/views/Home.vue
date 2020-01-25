@@ -9,7 +9,7 @@
 
       <div class="option">
         <select class="dateselect" v-model="checked1" style="background-color: rgb(88, 88, 92); border-width: 0px; color: white;  width: 150px; font-size: 20px">
-          <option selected="checked1" value="Choose">Choose</option>
+          <option selected="checked1" value="None">None</option>
           <option v-bind:key="date" v-for="date in dates" :value="date">     
             {{ date.city }}
           </option>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="theclocks">
-      <DigitalClock /> <!-- dodat unutra -> :tz="checked2" -->
+      <DigitalClock :tz="checked2"/> <!-- dodat unutra -> :tz="checked2" -->
 
       <div class="option">
       <select class="dateselect" v-model="checked2" style="background-color: rgb(88, 88, 92); border-width: 0px; color: white;  width: 150px; font-size: 20px">
@@ -56,7 +56,7 @@
     </div>
 
     <div class="theclocks">
-      <DigitalClock />  <!-- dodat unutra -> :tz="checked3" -->
+      <DigitalClock :tz="checked3"/>  <!-- dodat unutra -> :tz="checked3" -->
       <div class="option">
       <select class="dateselect" v-model="checked3" style="background-color: rgb(88, 88, 92); border-width: 0px; color: white;  width: 150px; font-size: 20px">
         <option selected="checked3" value="Choose">Choose</option>
@@ -85,30 +85,30 @@
           -->
             <p style="color: black"> Choose city to discover more! </p>
           <!-- <div v-bind:key="date" v-for="date in dates" :value="date"> -->
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="newyorkprofile">New York</router-link> <!--  style="color: white" v-on:click.native="doSomethingCool" to="profilescity" -->
+            <router-link style="color: black" v-on:click.native="neštonešto" to="newyorkprofile">New York</router-link> <!--  style="color: white" v-on:click.native="doSomethingCool" to="profilescity" -->
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="berlinprofile">Berlin</router-link> 
+            <router-link style="color: black" v-on:click.native="neštonešto" to="berlinprofile">Berlin</router-link> 
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="losangelesprofile">Los Angeles</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="losangelesprofile">Los Angeles</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="madridprofile">Madrid</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="madridprofile">Madrid</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="vancouverprofile">Vancouver</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="vancouverprofile">Vancouver</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="phoenixprofile">Phoenix</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="phoenixprofile">Phoenix</router-link>
             <!--
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="denverprofile">Denver</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="denverprofile">Denver</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="costaricaprofile">Costa Rica</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="costaricaprofile">Costa Rica</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="chicagoprofile">Chicago</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="chicagoprofile">Chicago</router-link>
             -->
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="moscowprofile">Moscow</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="moscowprofile">Moscow</router-link>
             <!--
             <br>
-            <router-link style="color: black" v-on:click.native="doSomethingCool" to="jamaicaprofile">Jamaica</router-link>
+            <router-link style="color: black" v-on:click.native="neštonešto" to="jamaicaprofile">Jamaica</router-link>
             -->
           <!-- </div> -->
         </div>
@@ -128,10 +128,11 @@ export default {
   },
   data() {
     return {
-      checked1: 'Choose',
+      checked1: 'None',
       checked2: 'Choose',
       checked3: 'Choose',
       dates: [
+        //{ city: 'Choose', regi}
         { city: 'New York', region: 'America/New_York'}, 
         { city: 'Berlin', region: 'Europe/Berlin'},
         { city: 'Los Angeles', region: 'America/Los_Angeles'},
@@ -143,9 +144,20 @@ export default {
         { city: 'Chicago', region: 'America/Chicago'},
         { city: 'Moscow', region: 'Europe/Moscow'},
         { city: 'Jamaica', region: 'America/Jamaica'},
+        { city: 'Oslo', region: 'Europe/Oslo'},
+        { city: 'Buenos Aires', region: 'America/Argentina/Buenos_Aires'},
+        { city: 'Lagos', region: 'Africa/Lagos'},
+        { city: 'Seoul', region: 'Asia/Seoul'},
+        { city: 'Dublin', region: 'Europe/Dublin'},
+        { city: 'Amsterdam', region: 'Europe/Amsterdam'},
+        { city: 'Tokyo', region: 'Asia/Tokyo'},
+        { city: 'Nairobi', region: 'Africa/Nairobi'},
+        { city: 'Zurich', region: 'Europe/Zurich'},
+        { city: 'Melbourne', region: 'Australia/Melbourne'},
       ],
     };
   },
+  // vidit ča s tin computed
   computed: {
     timeVal() {
       return this.updateDateTime(this.checked1.region);

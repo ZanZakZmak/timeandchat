@@ -1,20 +1,20 @@
 <template>
+<div>
+    <!-- {{tz}} --> 
+    <!-- {{now}} -->
   <div class="clock" v-if="hourtime != ''">
-    {{tz}} 
     <div class="clock-hours">
-      <span class="clock-hourtime" v-text="hourtime"><!-- {{tz}} --></span>
-      <span v-text="hours">{{tz}}</span>
+      <span class="clock-hourtime" v-text="hourtime"></span>
+      <span v-text="hours"></span>
     </div>
-    <div class="clock-minutes" v-text="minutes"><!-- {{tz}} --></div>
-    <div class="clock-seconds" v-text="seconds"><!-- {{tz}} --></div>
-  </div>
+    <div class="clock-minutes" v-text="minutes"></div>
+    <div class="clock-seconds" v-text="seconds"></div>
+  </div></div>
 </template>
 
 <script>
 import { getHourTime, getZeroPad } from './Filters'
 import moment from 'moment-timezone'
-
-//import moment from 'moment'
 //import { dates } from '@/views/Home.vue'
 
 export default {
@@ -37,6 +37,7 @@ export default {
   data () {
     return {
      // timezone: '',
+      now: "",
       hours: 0,
       minutes: 0,
       seconds: 0,
@@ -54,7 +55,7 @@ export default {
 
 
     this.$options.interval = setInterval(this.updateDateTime, 1000);
-    // this.$options.interval = setInterval(this.newyorkDateTime, 1000); -> OVO RADI, SAD TREBA POVEZAT SA HOME-OM!!!
+    //this.$options.interval = setInterval(this.newyorkDateTime, 1000); //-> OVO RADI, SAD TREBA POVEZAT SA HOME-OM!!!
   },
 
   beforeDestroy () {
@@ -63,26 +64,16 @@ export default {
 
   methods: {
     // LOKALNO VRIJEME (VRIJEME NA LAPTOPU)
-    updateDateTime (/*zone*/) {
-      this.now = new Date()
-      this.hours = this.now.getHours()
-      this.minutes = getZeroPad(this.now.getMinutes())
-      this.seconds = getZeroPad(this.now.getSeconds())
-      this.hourtime = getHourTime(this.hours)
-      this.hours = this.hours % 12 || 12
-      //this.timezone = zone;
+    updateDateTime () {
+      //if (this.tz != 'Choose'){
+        this.now = moment(new Date()).tz(this.tz.region)
+        this.hours = this.now.format("hh")
+        this.minutes = this.now.format("mm")
+        this.seconds = this.now.format("ss")
+        this.hourtime = getHourTime(this.hours)
+       // this.hours = this.hours % 12 || 12
+      //}
     },
-    /* NEW YORK SAT
-    newYorkTimeDisplay (offset){
-    let ny = new Date();  
-    this.hours = ny.getHours()+offset;
-    this.minutes = getZeroPad(ny.getMinutes())
-    this.seconds = getZeroPad(ny.getSeconds())
-    this.hourtime = getHourTime(this.hours)
-    this.hours = this.hours % 12 || 12 
-    }*/
-
-
     
     /* 
     LINKOVI VEZANI ZA SAT:
@@ -94,22 +85,10 @@ export default {
     -> https://stackoverflow.com/questions/29877791/how-to-load-time-zone-data-into-moment-timezone-js
     -> https://stackoverflow.com/questions/27956436/add-new-timezone-to-moment-js-timezone 
     -> https://stackoverflow.com/questions/15347589/format-date-in-a-specific-timezone
-    -> http://www.javascriptkit.com/script/script2/dropworldclock.shtml MOGUĆE DA ĆE MI JAKO TREBAT!!!
-    -> probat googlat: js clock with dropdown option
-    -> google: moment timezone javascript multiple clocks
-    -> google: moment timezone javascript clock
 
 
     */
-    newyorkDateTime (){
-    this.la = new Date(); 
-    this.la = moment.tz("America/New_York") 
-    this.hours = this.la.hours();
-    this.minutes = getZeroPad(this.la.minutes())
-    this.seconds = getZeroPad(this.la.seconds())
-    this.hourtime = getHourTime(this.hours)
-    this.hours = this.hours % 12 || 12 
-    }
+  
   },  
   /*
   computed: {
