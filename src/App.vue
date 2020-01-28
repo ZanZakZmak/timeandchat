@@ -4,7 +4,6 @@
 
       <!--
 
-      (kopirat sa githuba od tankovića-> plan-wk7) 
 
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -21,10 +20,10 @@
 
       -->
       <!-- <div style="margin: 0 auto></div>" -->
-      <router-link to="/">Home</router-link> |
-      <router-link to="/userprofile">User Profile</router-link> |
-      <router-link to="/yourprofile">Your Profile</router-link> |
-      <router-link to="/profilescity">City Profile</router-link> |
+      <router-link to="/">Home</router-link> 
+      <router-link to="/userprofile">User Profile </router-link> 
+      <router-link to="/yourprofile">Your Profile</router-link> 
+      <router-link to="/profilescity">City Profile</router-link> 
       <!--<router-link to="/login">Login</router-link> | -->
       <router-link to="/signup">Signup</router-link> 
       
@@ -129,14 +128,18 @@ export default {
 #nav {
   padding: 10px;
   background-color: #2c3e50;
+  font-size: 15px;
   /*color: white;*/
 
   a {
+    padding: 13px;
     font-weight: bold;
     color: white;
 
     &.router-link-exact-active {
-      color: #42b983;
+      //padding: 13px;
+      background-color: rgb(255, 255, 255);
+      color: #000000;
     }
   }
 }

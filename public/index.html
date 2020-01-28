@@ -51,6 +51,7 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var db = firebase.firestore();
+      db.setting ({timestampsInSnapshots: true}); //--> za radit na snapshotovima, da ne dobijemo error
       var storage = firebase.storage();
       </script>
   </body>

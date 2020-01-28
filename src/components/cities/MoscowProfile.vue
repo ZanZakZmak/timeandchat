@@ -8,6 +8,8 @@
       <h6>Location: 55°45'20.9"N 37°37'02.3"E </h6>
       <br>
       <h6>Time zone: MSK</h6>
+      <br>
+      <h6>UTC time offset: +3</h6>
       <div class="button">
         <router-link to="/"> <!-- "/" bi trebao vodit u Home.vue -->
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>

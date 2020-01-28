@@ -56,7 +56,7 @@
     </div>
 
     <div class="theclocks">
-      <DigitalClock :tz="checked3"/>  <!-- dodat unutra -> :tz="checked3" -->
+      <DigitalClock :tz="checked3"/>  
       <div class="option">
       <select class="dateselect" v-model="checked3" style="background-color: rgb(88, 88, 92); border-width: 0px; color: white;  width: 150px; font-size: 20px">
         <option selected="checked3" value="Choose">Choose</option>
@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="optioncityprofiles">
-        <div>
+        <ul style="float: left; padding: 100px; list-style-type: none">
           <!--
 
 
@@ -85,33 +85,90 @@
           -->
             <p style="color: black"> Choose city to discover more! </p>
           <!-- <div v-bind:key="date" v-for="date in dates" :value="date"> -->
-            <router-link style="color: black" v-on:click.native="neštonešto" to="newyorkprofile">New York</router-link> <!--  style="color: white" v-on:click.native="doSomethingCool" to="profilescity" -->
+            <li>
+              <strong>Europe:</strong>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="berlinprofile">Berlin</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="madridprofile">Madrid</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="londonprofile">London</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="moscowprofile">Moscow</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="zagrebprofile">Zagreb</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="amsterdamprofile">Amsterdam</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="zurichprofile">Zurich</router-link>
+            </li>
+            
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="berlinprofile">Berlin</router-link> 
+            
+            <li>
+              <strong>North America:</strong>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="newyorkprofile">New York</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="losangelesprofile">Los Angeles</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="vancouverprofile">Vancouver</router-link>
+              <br>
+              <router-link style="color: black" v-on:click.native="neštonešto" to="phoenixprofile">Phoenix</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="denverprofile">Denver</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="chicagoprofile">Chicago</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="sanjoseprofile">San José</router-link>
+            </li>
+            
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="losangelesprofile">Los Angeles</router-link>
+
+            <li>
+              <strong>Asia:</strong>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="seoulprofile">Seoul</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="tokyoprofile">Tokyo</router-link>
+            </li>
+
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="madridprofile">Madrid</router-link>
+
+            <li>
+              <strong>Africa:</strong>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="lagosprofile">Lagos</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="cairoprofile">Cairo</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="nairobiprofile">Nairobi</router-link>
+            </li>
+
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="vancouverprofile">Vancouver</router-link>
+
+            <li>
+              <strong>Australia:</strong>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="sydneyprofile">Sydney</router-link>
+              <br>
+              <router-link v-on:click.native="neštonešto" to="melbournehprofile">Melbourne</router-link>
+            </li>
+          
+            <!-- 
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="phoenixprofile">Phoenix</router-link>
-            <!--
+            <router-link v-on:click.native="neštonešto" to="saopauloprofile">Sao Paulo</router-link> 
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="denverprofile">Denver</router-link>
+            <router-link v-on:click.native="neštonešto" to="singaporeprofile">Singapore</router-link>
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="costaricaprofile">Costa Rica</router-link>
+            <router-link v-on:click.native="neštonešto" to="buenosaresprofile">Buenos Ares</router-link>   
             <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="chicagoprofile">Chicago</router-link>
+            <router-link v-on:click.native="neštonešto" to="dubaiprofile">Dubai</router-link> 
+            <br>
+            <router-link v-on:click.native="neštonešto" to="santiagoprofile">Santiago</router-link>
             -->
-            <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="moscowprofile">Moscow</router-link>
-            <!--
-            <br>
-            <router-link style="color: black" v-on:click.native="neštonešto" to="jamaicaprofile">Jamaica</router-link>
-            -->
-          <!-- </div> -->
-        </div>
+
+        </ul>
       </div>
   </div>
 </template>
@@ -128,30 +185,36 @@ export default {
   },
   data() {
     return {
-      checked1: 'None',
+      checked1: '',
       checked2: 'Choose',
       checked3: 'Choose',
       dates: [
         //{ city: 'Choose', regi}
+        { city: 'Local', region: '/'},
         { city: 'New York', region: 'America/New_York'}, 
         { city: 'Berlin', region: 'Europe/Berlin'},
         { city: 'Los Angeles', region: 'America/Los_Angeles'},
         { city: 'Madrid', region: 'Europe/Madrid'},
+        //{ city: 'Sao Paulo', region: 'America/Sao_Paulo'},     //PIŠE UTM UMISTO VREMENSKE ZONE
         { city: 'Vancouver', region: 'America/Vancouver'},
         { city: 'Phoenix', region: 'America/Phoenix'},
         { city: 'Denver', region: 'America/Denver'},
-        { city: 'Costa Rica', region: 'America/Costa_Rica'},
+        { city: 'London', region: 'Europe/London'},
+        { city: 'San José', region: 'America/Costa_Rica'},
         { city: 'Chicago', region: 'America/Chicago'},
         { city: 'Moscow', region: 'Europe/Moscow'},
-        { city: 'Jamaica', region: 'America/Jamaica'},
-        { city: 'Oslo', region: 'Europe/Oslo'},
-        { city: 'Buenos Aires', region: 'America/Argentina/Buenos_Aires'},
+        { city: 'Zagreb', region: 'Europe/Zagreb'},
+        //{ city: 'Singapore', region: 'Asia/Singapore'},        //PIŠE UTM UMISTO VREMENSKE ZONE
+        { city: 'Cairo', region: 'Africa/Cairo'},
+        //{ city: 'Buenos Aires', region: 'America/Argentina/Buenos_Aires'},     //PIŠE UTM UMISTO VREMENSKE ZONE
         { city: 'Lagos', region: 'Africa/Lagos'},
+        //{ city: 'Dubai', region: 'Asia/Dubai'},     //PIŠE UTM UMISTO VREMENSKE ZONE
         { city: 'Seoul', region: 'Asia/Seoul'},
-        { city: 'Dublin', region: 'Europe/Dublin'},
+        { city: 'Sydney', region: 'Australia/Sydney'},
         { city: 'Amsterdam', region: 'Europe/Amsterdam'},
         { city: 'Tokyo', region: 'Asia/Tokyo'},
         { city: 'Nairobi', region: 'Africa/Nairobi'},
+        //{ city: 'Santiago', region: 'America/Santiago'},   //PIŠE UTM UMISTO VREMENSKE ZONE
         { city: 'Zurich', region: 'Europe/Zurich'},
         { city: 'Melbourne', region: 'Australia/Melbourne'},
       ],
@@ -170,38 +233,6 @@ export default {
     getTimezoneNewYork: function () {
         timezone = moment.tz.add("America/New_York|EST EDT EWT EPT|50 40 40 40|01010101010101010101010101010101010101010101010102301010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-261t0 1nX0 11B0 1nX0 11B0 1qL0 1a10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 RB0 8x40 iv0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1qN0 WL0 1qN0 11z0 1o10 11z0 1o10 11z0 1o10 11z0 1o10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1cN0 1cL0 1cN0 1cL0 s10 1Vz0 LB0 1BX0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 1cN0 1fz0 1a10 1fz0 1cN0 1cL0 1cN0 1cL0 1cN0 1cL0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|21e6");
         return timezone.dates;
-    }*/
-    
-    /*
-    hour1: function (){ 
-        
-        return 0//this.hours + (this.moment.tz.add('Europe/Zagreb') + this.checked1);
-      }
-    }
-    /*
-    hour2min2sec2(){
-      checked2: function (){
-
-      }
-
-    }
-
-    hour3min3sec3(){
-      checked2: function (){
-
-      }
-
-    }
-
-    funkcijaMinsec () {
-      var seconds = moment.tz(updateDateTime, "Europe/Zagreb").format('Z');
-      var minutes = moment.tz(updateDateTime, "Europe/Zagreb").format('Z');
-      
-      
-      /*return this.dates...
-
-
-
     }*/
 }
 </script>
@@ -304,6 +335,10 @@ export default {
   }
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    color: #000000;
   }
 </style>
 

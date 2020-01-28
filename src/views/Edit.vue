@@ -3,7 +3,7 @@
     <div class="container bootstrap snippets">
       <div class="row">
         <div v-if="authenticated" class="col-xs-12 col-sm-9"> 
-          <form @submit.prevent="saveChanges">
+          <form @submit.prevent="saveChanges()"> 
 
             <div class="panel panel-default"></div>
             <div class="panel panel-default">
@@ -31,14 +31,14 @@
                   </div>
                 </div>
                 
-                <form @submit.prevent="postNewName" class="form-inline mb-5">
+                <div class="form-inline mb-5">
                   <div class="form-group">
                     <label for="bio" style="float: left">Change name:</label>
                     <div class="col-sm-10">
                       <input v-model="displayName" type="text" class="form-control" id="bio" placeholder="Enter the bio">
                     </div>
                   </div>
-                </form>
+                </div>
 
                 <form @submit.prevent="postNewBio" class="form-inline mb-5">
                   <div class="form-group">
@@ -123,6 +123,12 @@
   </div>
 </template>
 
+<!-- 
+-> google: firebase updates user but not save
+-> https://stackoverflow.com/questions/54912180/new-user-not-saved-in-firebase-using-angular
+-> https://firebase.google.com/docs/reference/js/firebase.User.html#updateprofile -> js firebase
+-> https://firebase.google.com/docs/auth/web/manage-users#update_a_users_profile -> web firebase
+-->
 
 
 <script>
@@ -142,8 +148,8 @@ export default {
         newBio: ""
       }).then(function() {
         console.log("User updated");
-        displayName = user.displayName;
-        newBio = user.newBio
+        var displayName = user.displayName;
+        //newBio = user.newBio;
       }).catch(function(error) {
         console.log(error);
       });

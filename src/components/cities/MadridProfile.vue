@@ -5,13 +5,15 @@
 <template>
   <div class="madridrofile" style="padding: 30px">
     <div class="col-3 float-left pr-3">
-      <!-- <img alt="" class="madrid" src="..." style="border-radius: 10%; height: 300px; width: 300px"> -->
+      <img alt="" class="madrid" src="madrid.jpg" style="border-radius: 10%; height: 300px; width: 300px"> 
       <h3>Madrid</h3>
       <h6>Country: Spain</h6>
       <br>
       <h6>Location: 40.4168° N, 3.7038° W </h6>
       <br>
       <h6>Time zone: CET</h6>
+      <br>
+      <h6>UTC time offset: +1</h6>
       <div class="button">
         <router-link to="/">        
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>

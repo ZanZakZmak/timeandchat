@@ -57,7 +57,29 @@ export default {
       displayName: "",
       password: "",
       passwordConfirmation: "" ,
-      newLocation: ["New York", "Honolulu", "Los Angeles", "San Francisco", "Vancouver", "Phoenix", "Denver", "Costa Rica", "Chicago", "Moscow", "Jamaica"]
+      newLocation: [
+        "New York", 
+        "Berlin", 
+        "Los Angeles", 
+        "Madrid", 
+        "Vancouver", 
+        "Phoenix", 
+        "Denver", 
+        "San José", 
+        "Chicago", 
+        "Moscow", 
+        "London",
+        "Zagreb",
+        "Amsterdam",
+        "Zurich",
+        "Seoul",
+        "Tokyo",
+        "Lagos",
+        "Cairo",
+        "Nairobi",
+        "Sydney",
+        "Melbourne",
+      ]
     }
   },
   methods: {

@@ -5,13 +5,15 @@
 <template>
   <div class="losangelesprofile" style="padding: 30px">
     <div class="col-3 float-left pr-3">
-      <!-- <img alt="" class="losangeles" src="..." style="border-radius: 10%; height: 300px; width: 300px"> -->
+      <img alt="" class="losangeles" src="losangeles.jpg" style="border-radius: 10%; height: 300px; width: 300px"> 
       <h3>Los Angeles</h3>
       <h6>Country: United States of America</h6>
       <br>
       <h6>Location: 34.0522° N, 118.2437° W </h6>
       <br>
       <h6>Time zone: PST</h6>
+      <br>
+      <h6>UTC time offset: -8</h6>
       <div class="button">
         <router-link to="/">       
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>

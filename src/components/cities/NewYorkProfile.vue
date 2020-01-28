@@ -12,16 +12,18 @@
       <h6>Location: 40.7128° N, 74.0060° W </h6>
       <br>
       <h6>Time zone: EST</h6>
+      <br>
+      <h6>UTC time offset: -5</h6>
       <div class="button">
         <router-link to="/"> <!-- "/" bi trebao vodit u Home.vue -->
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
         </router-link>
       </div>
-      <!-- <div class="button">
-        <router-link to="/">       "/" bi trebao vodit u Home.vue 
-          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
+      <div class="button">
+        <router-link to="/nysearch">       
+          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">fwends</button>
         </router-link> 
-      </div>  -->
+      </div>  
     </div>
     <div class="col-9 float-left pl-2">
       <p style="float: left; padding: 40px font-size: 15px">

@@ -1,21 +1,23 @@
 <template>
 <div>
     <!-- {{tz}} --> 
-    <!-- {{now}} -->
-  <div class="clock" v-if="hourtime != ''">
+    <!-- {{now}}  -->
+  <div class="clock">
     <div class="clock-hours">
-      <span class="clock-hourtime" v-text="hourtime"></span>
+     <!-- <span class="clock-hourtime" v-text="hourtime"></span> -->
       <span v-text="hours"></span>
     </div>
     <div class="clock-minutes" v-text="minutes"></div>
     <div class="clock-seconds" v-text="seconds"></div>
-  </div></div>
+    <br>
+    <div class="clock-zone" v-text="zone"></div>  <!-- IZBRISAT PO POTREBI -->
+  </div>
+  </div>
 </template>
 
 <script>
-import { getHourTime, getZeroPad } from './Filters'
+//import { getHourTime, getZeroPad } from './Filters'
 import moment from 'moment-timezone'
-//import { dates } from '@/views/Home.vue'
 
 export default {
 
@@ -41,21 +43,12 @@ export default {
       hours: 0,
       minutes: 0,
       seconds: 0,
-      hourtime: ''
+      //hourtime: ''
     }
   },
 
   mounted () {
-  
-    //this.$options.interval = setInterval(this.newYorkTimeDisplay, 1000, -6);
-    /*this.$options.interval = setInterval( _ => {
-      this.dates = moment().tz.(this.timezone);
-    });*/
-  
-
-
     this.$options.interval = setInterval(this.updateDateTime, 1000);
-    //this.$options.interval = setInterval(this.newyorkDateTime, 1000); //-> OVO RADI, SAD TREBA POVEZAT SA HOME-OM!!!
   },
 
   beforeDestroy () {
@@ -63,15 +56,17 @@ export default {
   },
 
   methods: {
-    // LOKALNO VRIJEME (VRIJEME NA LAPTOPU)
     updateDateTime () {
       //if (this.tz != 'Choose'){
         this.now = moment(new Date()).tz(this.tz.region)
-        this.hours = this.now.format("hh")
+        this.hours = this.now.format("HH")
         this.minutes = this.now.format("mm")
         this.seconds = this.now.format("ss")
-        this.hourtime = getHourTime(this.hours)
-       // this.hours = this.hours % 12 || 12
+        this.zone = this.now.format("zz") // IZBRISAT PO POTREBI
+       
+       /*this.hourtime = getHourTime(this.hours)
+       
+       this.hours = this.hours % 12 || 12*/
       //}
     },
     
@@ -108,7 +103,8 @@ export default {
 }
 .clock-hours,
 .clock-minutes,
-.clock-seconds {
+.clock-seconds,
+.clock-zone {
   background: linear-gradient(to bottom, #26303b 50%, #2c3540 50%);
   display: inline-block;
   color: #fff;
@@ -126,10 +122,16 @@ export default {
 .clock-seconds {
   border-radius: 0 .5rem .5rem 0;
 }
+
+.clock-zone {
+  background: linear-gradient(to bottom, rgba(44,53,64,1) 50%, #353f41 50%);
+  border-radius: .10rem .10rem .5rem .5rem;
+}
+/*
 .clock-hourtime {
   font-size: 16px;
   position: absolute;
   top: 2px;
   left: 8px;
-}
+}*/
 </style>

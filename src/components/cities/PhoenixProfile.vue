@@ -7,7 +7,9 @@
       <br>
       <h6>Location: 33.4484° N, 112.0740° W </h6>
       <br>
-      <h6>Time zone: MSK</h6>
+      <h6>Time zone: MST</h6>
+      <br>
+      <h6>UTC time offset: -7</h6>
       <div class="button">
         <router-link to="/"> 
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
