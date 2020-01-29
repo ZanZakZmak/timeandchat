@@ -21,7 +21,7 @@
       </div>
       <div class="button">
         <router-link to="/nysearch">       
-          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">fwends</button>
+          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Search for Users</button>
         </router-link> 
       </div>  
     </div>

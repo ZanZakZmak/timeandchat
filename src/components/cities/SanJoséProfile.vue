@@ -14,6 +14,9 @@
         <router-link to="/"> 
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
         </router-link>
+        <router-link to="/sanjosésearchsearch">       
+          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Search for Users</button>
+        </router-link> 
       </div>
     </div>
     <div class="col-9 float-left pl-2">

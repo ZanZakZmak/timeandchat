@@ -16,7 +16,6 @@
 </template>
 
 <script>
-//import { getHourTime, getZeroPad } from './Filters'
 import moment from 'moment-timezone'
 
 export default {
@@ -127,11 +126,4 @@ export default {
   background: linear-gradient(to bottom, rgba(44,53,64,1) 50%, #353f41 50%);
   border-radius: .10rem .10rem .5rem .5rem;
 }
-/*
-.clock-hourtime {
-  font-size: 16px;
-  position: absolute;
-  top: 2px;
-  left: 8px;
-}*/
 </style>

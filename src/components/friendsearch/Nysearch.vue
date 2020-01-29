@@ -1,8 +1,6 @@
 <template>
     <div class="searchfriends">
-      <h2>xd</h2>
-        <!-- <form id="add-cafe-form"></form> -->
-   
+      <h2>Users: </h2>
         <ul id="search-friends-list"></ul>
       </div>
         <!--
@@ -55,6 +53,7 @@ li{
   color: #020202;
   border-bottom: 1px solid #e6e6e6;
   height: 46px;
+  border-radius: .5rem .5rem .5rem .5rem;
 }
 li span:nth-child(1){
   float: left;

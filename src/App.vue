@@ -1,24 +1,6 @@
 <template>
   <div id="app">
     <div id="nav">
-
-      <!--
-
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 mr-auto ml-5">
-        <input v-model="searchTerm" class="form-control mr-sm-2" type="search" placeholder="Trazi nesto" aria-label="Search">
-        </form>
-        <router-link v-if="!authenticated" class="btn btn-info my-2 my-sm-0 mr-2" to="/login">Login</router-link>
-        <span v-if="authenticated">
-          {{ userEmail }}
-        <a @click="logout" class="btn btn-info my-2 my-sm-0 mr-2" href="#">Logout</a>
-        </span>
-        <router-link v-if="!authenticated" class="btn btn-outline my-2 my-sm-0 mr-2" to="/signup">Signup</router-link>
-
-
-      -->
       <!-- <div style="margin: 0 auto></div>" -->
       <router-link to="/">Home</router-link> 
       <router-link to="/userprofile">User Profile </router-link> 
@@ -34,8 +16,6 @@
           <a @click.prevent="logout" href="#">| Logout</a>
         </span>
       </div>
-      
-
     </div>
     <router-view/>
   </div>

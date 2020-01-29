@@ -17,7 +17,10 @@
       <div class="button">
         <router-link to="/">       
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
-        </router-link> 
+        </router-link>
+        <router-link to="/berlinsearch">       
+          <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Search for Users</button>
+        </router-link>  
       </div>  
     </div>
     <div class="col-9 float-left pl-2">

@@ -8,32 +8,35 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    /*children: [
+
+    ]*/
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/signup',
     name: 'signup',
-    component: () => import(/* webpackChunkName: "login" */  '../views/Signup.vue') 
+    component: () => import('../views/Signup.vue') 
   },
   {
     path: '/userprofile',
     name: 'userprofile',
-    component: () => import(/* webpackChunkName: "login" */  '../views/UserProfile.vue') 
+    component: () => import('../views/UserProfile.vue') 
   },
   {
     path: '/yourprofile',
     name: 'yourprofile',
-    component: () => import(/* webpackChunkName: "login" */  '../views/YourProfile.vue') 
+    component: () => import('../views/YourProfile.vue') 
   },
   {
     path: '/edit',
     name: 'edit',
-    component: () => import(/* webpackChunkName: "login" */  '../views/Edit.vue') 
+    component: () => import('../views/Edit.vue') 
   },
   {
     path: '/searchfriends',
@@ -55,108 +58,102 @@ const routes = [
     name: 'chicagosearch',
     component: () => import(/* webpackChunkName: "login" */  '../components/friendsearch/Chicagosearch.vue') 
   },
-  /*
-   {
+  {
     path: '/amsterdamsearch',
     name: 'amsterdamsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friendsearch/AmsterdamSearch.vue') 
+    component: () => import('../components/friendsearch/AmsterdamSearch.vue') 
   },
   {
     path: '/berlinsearch',
     name: 'berlinsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friendsearch/BerlinSearch.vue') 
+    component: () => import('../components/friendsearch/BerlinSearch.vue') 
   },
   {
     path: '/cairosearch',
     name: 'cairosearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/CairoSearch.vue') 
+    component: () => import('../components/friendsearch/CairoSearch.vue') 
   },
   {
     path: '/denversearch',
     name: 'denversearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/DenverSearch.vue') 
+    component: () => import('../components/friendsearch/DenverSearch.vue') 
   },
   {
     path: '/lagossearch',
     name: 'lagossearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friendsearch/LagosSearch.vue') 
+    component: () => import('../components/friendsearch/LagosSearch.vue') 
   },
   {
     path: '/londonsearch',
     name: 'londonsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friendsearch/LondonSearch.vue') 
-  },
-  {
-    path: '/chicagosearch',
-    name: 'chicagosearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/Chicagosearch.vue') 
+    component: () => import('../components/friendsearch/LondonSearch.vue') 
   },
   {
     path: '/losangelessearch',
     name: 'losangelessearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/LosAngelesSearch.vue') 
+    component: () => import('../components/friendsearch/LosAngelesSearch.vue') 
   },
   {
     path: '/madridsearch',
     name: 'madridsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/MadridSearch.vue') 
+    component: () => import('../components/friendsearch/MadridSearch.vue') 
   },
   {
     path: '/melbournesearch',
     name: 'melbournesearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/Melbournesearch.vue') 
+    component: () => import('../components/friendsearch/Melbournesearch.vue') 
   },
   {
     path: '/moscowsearch',
     name: 'moscowsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/MoscowSearch.vue') 
+    component: () => import('../components/friendsearch/MoscowSearch.vue') 
   },
   {
     path: '/nairobisearch',
     name: 'nairobisearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/NairobiSearch.vue') 
+    component: () => import('../components/friendsearch/NairobiSearch.vue') 
   },
   {
     path: '/phoenixsearch',
     name: 'phoenixsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/PhoenixSearch.vue') 
+    component: () => import('../components/friendsearch/PhoenixSearch.vue') 
   },
   {
     path: 'sanjosésearch',
     name: 'sanjosésearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/SanJoséSearch.vue') 
+    component: () => import('../components/friendsearch/SanJoséSearch.vue') 
   },
   {
     path: '/seoulsearch',
     name: 'seoulsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/SeoulSearch.vue') 
+    component: () => import('../components/friendsearch/SeoulSearch.vue') 
   },
   {
     path: '/sydneysearch',
     name: 'sydneysearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/SydneySearch.vue') 
+    component: () => import('../components/friendsearch/SydneySearch.vue') 
   },
   {
     path: '/tokyosearch',
     name: 'tokyosearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/TokyoSearch.vue') 
+    component: () => import('../components/friendsearch/TokyoSearch.vue') 
   },
   {
     path: '/vancouversearch',
     name: 'vancouversearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/VancouverSearch.vue') 
+    component: () => import('../components/friendsearch/VancouverSearch.vue') 
   },
   {
     path: '/zagrebsearch',
     name: 'zagrebsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/ZagrebSearch.vue') 
+    component: () => import('../components/friendsearch/ZagrebSearch.vue') 
   },
   {
     path: '/zurichsearch',
     name: 'zurichsearch',
-    component: () => import(/* webpackChunkName: "login"   '../components/friensearch/ZurichSearch.vue') 
+    component: () => import('../components/friendsearch/ZurichSearch.vue') 
   }, 
-  */
+  
   {
     path: '/newyorkprofile',
     name: 'newyorkprofile',
@@ -262,10 +259,6 @@ const routes = [
     name: 'melbourneprofile',
     component: () => import('../components/cities/MelbourneProfile.vue')
   }
-  /*
- 
-  */
-  
 ]
 
 const router = new VueRouter({

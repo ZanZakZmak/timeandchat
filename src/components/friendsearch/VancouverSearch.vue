@@ -1,9 +1,8 @@
 <template>
     <div class="searchfriends">
-      <h2>Users:</h2>
-   
+        <h2>Users:</h2>
         <ul id="search-friends-list"></ul>
-      </div>
+    </div>
         <!--
         <div>
             <p>{{ displayName }} {{ newLocation }} {{ userEmail }}</p>  (za displayName dodat router-link)
@@ -34,7 +33,7 @@ export default {
     }
 
     // getting data
-    db.collection('users').where('newLocation', '==', 'Chicago').get().then(snapshot => {
+    db.collection('users').where('newLocation', '==', 'Vancouver').get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         renderUsers(doc);
       });

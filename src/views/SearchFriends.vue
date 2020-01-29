@@ -1,18 +1,10 @@
 <template>
     <div class="searchfriends">
       <h2>xd</h2>
-      <div class="option">
-        <select class="dateselect" v-model="checked1" style="background-color: rgb(88, 88, 92); border-width: 0px; color: white;  width: 150px; font-size: 20px">
-          <option selected="checked1" value="None">None</option>
-          <option v-bind:key="date" v-for="date in dates" :value="date">     
-            {{ date.newLocation }}
-          </option>
-        </select> 
-      </div>
-      <div>
-        <!-- <form id="add-cafe-form"></form> -->
-   
-        <ul id="search-friends-list"></ul>
+      <div>   
+        <ul id="search-friends-list">
+          <router-link v-on:click.native="sdgdf" to="yourprofile">Profiles</router-link>
+        </ul>
       </div>
         <!--
         <div>
@@ -60,65 +52,49 @@ za sortiranje korisnika bit će potreban addSnapshotListener() ili orderBy()
 
 
 <script>
-export default {
-  data() {
-    return {
-      checked1: '',
-      //checked2: 'Choose',
-      //checked3: 'Choose',
-      dates: [
-        //{ city: 'Choose', regi}
-        { newLocation: 'Local', region: '/'},
-        { newLocation: 'New York', region: 'America/New_York'}, 
-        { newLocation: 'Berlin', region: 'Europe/Berlin'},
-        //{ city: 'Teheran', region: 'Asia/Tehran'},
-        { newLocation: 'Los Angeles', region: 'America/Los_Angeles'},
-        { cinewLocationty: 'Madrid', region: 'Europe/Madrid'},
-        //{ city: 'Sao Paulo', region: 'America/Sao_Paulo'},     //PIŠE UTM UMISTO VREMENSKE ZONE
-        { newLocation: 'Vancouver', region: 'America/Vancouver'},
-        { newLocation: 'Phoenix', region: 'America/Phoenix'},
-       // { city: 'Jerusalem', region: 'Asia/Jerusalem'},
-        { newLocation: 'Denver', region: 'America/Denver'},
-        { newLocation: 'London', region: 'Europe/London'},
-        { newLocation: 'San José', region: 'America/Costa_Rica'},
-        { newLocation: 'Chicago', region: 'America/Chicago'},
-        { newLocation: 'Moscow', region: 'Europe/Moscow'},
-        //{ city: 'Guam', region: 'Pacific/Guam'},
-        { newLocation: 'Zagreb', region: 'Europe/Zagreb'},
-        //{ city: 'Jamaica', region: 'America/Jamaica'},
-        //{ city: 'Singapore', region: 'Asia/Singapore'},        //PIŠE UTM UMISTO VREMENSKE ZONE
-        { newLocation: 'Cairo', region: 'Africa/Cairo'},
-        //{ city: 'Buenos Aires', region: 'America/Argentina/Buenos_Aires'},     //PIŠE UTM UMISTO VREMENSKE ZONE
-        { newLocation: 'Lagos', region: 'Africa/Lagos'},
-        //{ city: 'Dubai', region: 'Asia/Dubai'},     //PIŠE UTM UMISTO VREMENSKE ZONE
-        { newLocation: 'Seoul', region: 'Asia/Seoul'},
-        { newLocation: 'Sydney', region: 'Australia/Sydney'},
-        { newLocation: 'Amsterdam', region: 'Europe/Amsterdam'},
-        { newLocation: 'Tokyo', region: 'Asia/Tokyo'},
-        { newLocation: 'Nairobi', region: 'Africa/Nairobi'},
-        //{ city: 'Santiago', region: 'America/Santiago'},   //PIŠE UTM UMISTO VREMENSKE ZONE
-        { newLocation: 'Zurich', region: 'Europe/Zurich'},
-        { newLocation: 'Melbourne', region: 'Australia/Melbourne'},
-      ],
-    };
-  },
+export default { 
   mounted (){
+
+      
+    var user = firebase.auth().user;
+    var email, bio, location, username;      //newImageUrl, uid, emailVerified;
+
+    if (user != null) {
+      username = user.displayName;
+      email = user.userEmail;
+      bio = user.newBio;
+      location = user.newLocation;
+      // username = user.userName;
+      /*newImageUrl = user.newImageUrl;
+      emailVerified = user.emailVerified;
+      uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.*/
+    }
     const searchFreindsList = document.querySelector('#search-friends-list');
 
     // create element & render users
     function renderUsers(doc){
-      let li = document.createElement('li');
+      let list = document.createElement('li');
       let displayName = document.createElement('span');
+      // let link = document.createElement('link');
       let newLocation = document.createElement('span');
 
-      li.setAttribute('data-id', doc.id);
+      list.setAttribute('data-id', doc.id);
       displayName.textContent = doc.data().displayName;
+      /*
+      link.appendChild(document.createTextNode("Link"));
+      link.href = '#';
+      link.onclick = router.push("yourprofile");*/
       newLocation.textContent = doc.data().newLocation;
 
-      /*<router-link to="/yourprofile">*/li.appendChild(displayName)/*</router-link>*/;
-      li.appendChild(newLocation);
+      /*<router-link to="/yourprofile">*/list.appendChild(displayName)/*</router-link>*/;
+      //li.appendChild(link);
+      <router-link style="color: black" to="yourprofile">Profiles</router-link>
+      list.appendChild(document.createTextNode("Profile")) //--> Radi ali je samo tekst
+      list.appendChild(newLocation);
 
-      searchFreindsList.appendChild(li);
+      searchFreindsList.appendChild(list);
     }
 
     // getting data

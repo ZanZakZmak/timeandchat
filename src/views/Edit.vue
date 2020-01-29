@@ -137,7 +137,13 @@ import store from '@/store.js'
 export default {
   data () {
     return store;
-  },
+  },/*
+  firestore(){
+      var user = firebase.auth().currentUser;
+      return {
+        store: db.collection('users').doc(user.id),
+    }
+  },*/
   methods: {
     saveChanges () { 
       var user = firebase.auth().currentUser;
@@ -179,7 +185,7 @@ export default {
                 url: this.postImageUrl
               })
               .then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
+                console.log("Document written with ID: ", /*docRef.*/id);
                 this.imageData = null;
               })
               .catch(function(error) {
@@ -234,6 +240,7 @@ export default {
       });
     }*/
 }
+
 </script>
 
 

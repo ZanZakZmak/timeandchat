@@ -34,7 +34,7 @@ export default {
     }
 
     // getting data
-    db.collection('users').where('newLocation', '==', 'Chicago').get().then(snapshot => {
+    db.collection('users').where('newLocation', '==', 'Berlin').get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         renderUsers(doc);
       });

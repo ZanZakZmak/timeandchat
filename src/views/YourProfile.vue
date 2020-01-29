@@ -28,17 +28,25 @@
       </div>
       <div class="button">
         <!-- 
-          <div v-if="currentUser()">
+          <div v-if="user = firebase.auth().currentUser">
             <router-link class="btn btn-primary mt-5" :to="{ name: 'edit' }">
               Edit Profile
+            </router-link>
+            <button type="file" class="btn btn-primary mt-5">Friend List</button>
+          </div>
+          <div v-else>
+            <router-link to="/friends(nepostojeći link)">
+              <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Add Friend</button>
+            </router-link>
+            <router-link to="/request(nepostojeći link)">
+              <button type="file" class="btn btn-primary mt-5">Send call request</button>
             </router-link>
           </div>
         -->
         <router-link to="/edit">
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Edit Profile</button>
         </router-link>
-      </div>
-      <div class="button">
+      
         <button type="file" class="btn btn-primary mt-5">Friend List</button>
       </div>
     </div>
@@ -65,7 +73,7 @@ export default {
   
 
   mounted () { 
-
+      
     var user = firebase.auth().currentUser;
     var email, bio, location, username;      //newImageUrl, uid, emailVerified;
 
