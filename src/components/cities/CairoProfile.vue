@@ -1,7 +1,7 @@
 <template>
   <div class="cairoprofile" style="padding: 30px">
     <div class="col-3 float-left pr-3">
-      <img alt="" class="cairo" src="" style="border-radius: 10%; height: 300px; width: 300px">
+      <img alt="" class="cairo" src="cairo.jpg" style="border-radius: 10%; height: 300px; width: 300px">
       <h3>Cairo</h3>
       <h6>Country: Egypt</h6>
       <br>

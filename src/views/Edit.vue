@@ -4,123 +4,76 @@
       <div class="row">
         <div v-if="authenticated" class="col-xs-12 col-sm-9"> 
           <form @submit.prevent="saveChanges()"> 
-
             <div class="panel panel-default"></div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">User info</h4>
-              </div>
-              <div>
-                <div class="form-group">
-                  <label style="float: left">Changle Location:</label>
-                  <div class="col-sm-10">
-                    <select class="form-control">
-                      <option selected="">Select location</option>
-                      <option>New York</option>
-                      <option>Honolulu</option>
-                      <option>Los Angeles</option>
-                      <option>San Francisco</option>
-                      <option>Vancouver</option>
-                      <option>Phoenix</option>
-                      <option>Denver</option>
-                      <option>Costa Rica</option>
-                      <option>Chicago</option>
-                      <option>Moscow</option>
-                      <option>Jamaica</option>
-                    </select>
-                  </div>
+            <div class="panel-heading">
+              <h4 class="panel-title">User info</h4>
+            </div>
+            <div>
+              <!-- <div class="form-group">
+                <label style="float: left">Changle Location:</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option selected="">Select location</option>
+                    <option>New York</option>
+                    <option>Honolulu</option>
+                    <option>Los Angeles</option>
+                    <option>San Francisco</option>
+                    <option>Vancouver</option>
+                    <option>Phoenix</option>
+                    <option>Denver</option>
+                    <option>Costa Rica</option>
+                    <option>Chicago</option>
+                    <option>Moscow</option>
+                    <option>Jamaica</option>
+                  </select>
                 </div>
+              </div> -->
                 
-                <div class="form-inline mb-5">
-                  <div class="form-group">
-                    <label for="bio" style="float: left">Change name:</label>
-                    <div class="col-sm-10">
-                      <input v-model="displayName" type="text" class="form-control" id="bio" placeholder="Enter the bio">
-                    </div>
+              <div class="form-inline mb-5">
+                <div class="form-group">
+                  <label for="bio" style="float: left">Change name:</label>
+                  <div class="col-sm-10">
+                    <input v-model="displayName" type="text" class="form-control" id="bio" placeholder="Enter the bio">
                   </div>
                 </div>
+              </div>
 
-                <form @submit.prevent="postNewBio" class="form-inline mb-5">
-                  <div class="form-group">
-                    <label for="bio" style="float: left">Change bio:</label>
-                    <div class="col-sm-10">
-                      <input v-model="newBio" type="text" class="form-control" id="bio" placeholder="Enter the bio">
-                    </div>
+              <form class="form-inline mb-5">  <!-- @submit.prevent="postNewBio" -->
+                <div class="form-group">
+                  <label for="bio" style="float: left">Change bio:</label>
+                  <div class="col-sm-10">
+                    <input v-model="newBio" type="text" class="form-control" id="bio" placeholder="Enter the bio">
                   </div>
-                </form>
+                </div>
+              </form>
+                
 
-
-
-
-                <form @submit.prevent="postNewImage" class="form-inline mb-5">
+            
+            <div>
+                <form @submit.prevent="postImage" class="form-inline mb-5">  <!-- <form @submit.prevent="postNewImage" class="form-inline mb-5"> -->
                   <div class="form-group">
-                    <croppa :width="230" :height="230" v-model="imageData"></croppa>
-                    <!-- <input v-model="newImageUrl" type="text" class="form-control ml-2" id="imageUrl" placeholder="Enter the image URL"> -->
-                  <button type="submit" class="btn btn-primary ml-2">Post image</button>
+                    <croppa :width="230" :height="230" v-model="imageData"></croppa>                
                   </div>
                 </form>
               </div>
-            </div>
-
-
-
-
-
-           <!--
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">Contact info</h4>
-              </div>
-            <div class="panel-body">
-          <div class="form-group">
-            <label style="float: left">Change E-mail address:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-        <h4 class="panel-title">Security</h4>
-        </div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label style="float: left">Current password:</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <label style="float: left">New password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control">
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-              <button type="submit" class="btn btn-primary" style="float: left; margin-right: 15px">Submit</button>
-              <button type="reset" class="btn btn-default" style="float: left">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
+            </div>    
               <div class="form-group">
-                <div class="col-sm-10 col-sm-offset-2">  <!-- v-bind:key="date" v-for="date in dates" :value="date" -->
+                <div class="col-sm-10 col-sm-offset-2">   <!-- v-bind:key="date" v-for="date in dates" :value="date" -->
                   <router-link to="/yourprofile">
                     <button type="submit" class="btn btn-primary" style="float: left; margin-right: 15px">Submit</button>
                   </router-link>
-                  <button type="reset" class="btn btn-default" style="float: left">Cancel</button>
+                  <router-link to="/yourprofile">
+                    <button type="reset" class="btn btn-default" style="float: left">Cancel</button>
+                  </router-link>
                 </div>
               </div>
-            </form>
+              </form>
+            </div>
+         
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <!-- 
@@ -137,65 +90,75 @@ import store from '@/store.js'
 export default {
   data () {
     return store;
-  },/*
+  },
   firestore(){
       var user = firebase.auth().currentUser;
       return {
         store: db.collection('users').doc(user.id),
     }
-  },*/
+  },
   methods: {
     saveChanges () { 
       var user = firebase.auth().currentUser;
 
       user.updateProfile({
         displayName: "",
-        //newImageUrl: "https://example.com/jane-q-user/profile.jpg"
-        newBio: ""
+        imageData: "",
+        newBio: "",
+        //newLocation: ""
       }).then(function() {
         console.log("User updated");
         var displayName = user.displayName;
-        //newBio = user.newBio;
+        var imageData = user.imageData;
+        var newBio = user.newBio;
+        //var newLocation = user.newLocation;
       }).catch(function(error) {
         console.log(error);
       });
+
+
+      user.updateProfile({imageData: null}).then(function() {
+        // Profile updated successfully!
+        // "Jane Q. User", hasn't changed.
+        var displayName = user.displayName;
+        // Now, this is null.
+        var photoURL = user.photoURL;
+      }, function(error) {
+      // An error happened.
+      });
     },
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    postImage() {
+    /*
+     postNewImage() {
       this.imageData.generateBlob(data => {
         if (data != null) {
-          let imageName = this.userEmail + "/slika.png";
-          storage.ref(imageName).put(data).then(() => {
-            db.collection("posts-real")
+          let imageName = this.userEmail + "/" + "/slika.png"; //let imageName = this.userEmail + "/slika.png";
+          storage.ref(imageName).put(blobData).then(result => { 
+            result.ref.getDownloadURL().then(url => {
+            db.collection("users")
               .add({
                 postedBy: this.userEmail,
-                time: Date.now(),
-                url: this.postImageUrl
+                //time: Date.now(),
+                url: url
               })
-              .then(function(docRef) {
-                console.log("Document written with ID: ", /*docRef.*/id);
+              .then(docRef => {
+                console.log("Document written with ID: ", docRef.id);
                 this.imageData = null;
               })
-              .catch(function(error) {
+              .catch(e => {
                 console.error("Error adding document: ", error);
               });
+            })
+            .catch(e=> {
+             console.error(e)
+            })
+          })
+          .catch(e => {
+          console.error(e)
           })
         }
-      })
-      this.postImageUrl = "";
-    }
+      });
+      //this.postImageUrl = "";
+    }*/
   },
 
   /*

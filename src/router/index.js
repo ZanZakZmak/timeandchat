@@ -39,24 +39,14 @@ const routes = [
     component: () => import('../views/Edit.vue') 
   },
   {
-    path: '/searchfriends',
-    name: 'searchfriends',
-    component: () => import( '../views/SearchFriends.vue')
-  },
-  {
-    path: '/profilescity',
-    name: 'profilescity',
-    component: () => import(/* webpackChunkName: "login" */  '../views/ProfilesCity.vue') 
-  },
-  {
     path: '/nysearch',
     name: 'nysearch',
-    component: () => import(/* webpackChunkName: "login" */  '../components/friendsearch/Nysearch.vue') 
+    component: () => import('../components/friendsearch/Nysearch.vue') 
   },
   {
     path: '/chicagosearch',
     name: 'chicagosearch',
-    component: () => import(/* webpackChunkName: "login" */  '../components/friendsearch/Chicagosearch.vue') 
+    component: () => import('../components/friendsearch/Chicagosearch.vue') 
   },
   {
     path: '/amsterdamsearch',
@@ -117,11 +107,6 @@ const routes = [
     path: '/phoenixsearch',
     name: 'phoenixsearch',
     component: () => import('../components/friendsearch/PhoenixSearch.vue') 
-  },
-  {
-    path: 'sanjosésearch',
-    name: 'sanjosésearch',
-    component: () => import('../components/friendsearch/SanJoséSearch.vue') 
   },
   {
     path: '/seoulsearch',
@@ -188,11 +173,6 @@ const routes = [
     path: '/denverprofile',
     name: 'denverprofile',
     component: () => import('../components/cities/DenverProfile.vue')
-  },
-  {
-    path: '/sanjoseprofile',
-    name: 'sanjoserofile',
-    component: () => import('../components/cities/SanJoséProfile.vue')
   },
   {
     path: '/chicagoprofile',

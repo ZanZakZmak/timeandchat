@@ -11,30 +11,31 @@
               <input v-model="email" type="email" class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             
-          
-           <div class="form-group">
+            <div class="form-group">
               <label for="usernameField">Username</label>
               <input v-model="chooseName" type="text" class="form-control" id="usernameField" aria-describedby="usernameHelp" placeholder="Enter Username">
             </div> 
           
-
-
             <div class="form-group">
               <label for="passwordField">Password</label>
               <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Password">
             </div>
+
             <div class="form-group">
               <label for="confirmPasswordField">Confirm Password</label>
               <input v-model="passwordConfirmation" type="password" class="form-control" id="confirmPasswordField" placeholder="Confirm password">
             </div>
-
+            
             <div class="form-group">
-            <label for="newLocation">Location</label>
-            <select
-              v-model="choosenLocation"
-              id="newLocation"
-              class="form-control form-control-lg">
-              <option v-bind:key="k" v-for="k in newLocation">{{k}}</option>
+              <label for="writeBio">Write something about yourself!</label>
+              <input v-model="writeSomething" type="text" class="form-control" id="writeBio" placeholder="Write something about yourself!">
+            </div>
+
+            
+            <div class="form-group">
+              <label for="newLocation">Location</label>
+              <select v-model="choosenLocation" id="newLocation" class="form-control form-control-lg">
+                <option v-bind:key="k" v-for="k in newLocation">{{k}}</option>
               </select>
             </div>
 
@@ -57,6 +58,7 @@ export default {
       displayName: "",
       password: "",
       passwordConfirmation: "" ,
+      newBio: "",
       newLocation: [
         "New York", 
         "Berlin", 
@@ -64,8 +66,7 @@ export default {
         "Madrid", 
         "Vancouver", 
         "Phoenix", 
-        "Denver", 
-        "San José", 
+        "Denver",  
         "Chicago", 
         "Moscow", 
         "London",
@@ -90,6 +91,7 @@ export default {
             .doc(id)
             .set({
               displayName: this.chooseName,
+              newBio: this.writeSomething,
               newLocation: this.choosenLocation
             })
             .then(function() {
@@ -99,6 +101,7 @@ export default {
               console.error("Error writing document: ", error);
             });
         })
+        
         .catch(error  => {
           console.error(error);
           this.errorMessage = error.message;

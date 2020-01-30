@@ -34,3 +34,11 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+  p {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+</style>

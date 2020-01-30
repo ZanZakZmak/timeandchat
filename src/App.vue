@@ -1,12 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <!-- <div style="margin: 0 auto></div>" -->
       <router-link to="/">Home</router-link> 
       <router-link to="/userprofile">User Profile </router-link> 
       <router-link to="/yourprofile">Your Profile</router-link> 
-      <router-link to="/profilescity">City Profile</router-link> 
-      <!--<router-link to="/login">Login</router-link> | -->
       <router-link to="/signup">Signup</router-link> 
       
       <div style="float: right; color: white">
@@ -49,6 +46,7 @@ export default {
             if (doc.exists) {
               console.log("Document data:", doc.data());
               this.displayName = doc.data().displayName;
+              this.newBio = doc.data().newBio;
               this.newLocation = doc.data().newLocation;
             } else {
               // doc.data() will be undefined in this case
@@ -56,8 +54,9 @@ export default {
             }
           });
 
-        if (this.$route.name !== 'home')
+        if (this.$route.name !== 'home'){
           this.$router.push({name: 'home'}).catch(err => console.log(err))
+        }
       }
       else {
         console.log("User is not logged in")

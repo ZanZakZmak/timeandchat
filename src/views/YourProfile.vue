@@ -20,29 +20,13 @@
   <div class="yourprofile" style="padding: 30px">
     <div class="profil-podaci" style="float: left">  <!-- col-3 float-left pr-3 -->
       <div class="pic" style="float: left">
-        <!-- <img :src="newImageUrl" class="user-img" /> -->
-        <img alt="" height="230" width="230" src="slika.jpg" style="border-radius: 15%">
+        <img src="slika.jpg" alt="slika.jpg" class="user-img" height="230" width="230" style="border-radius: 15%" />
+       <!-- <img alt="" height="230" width="230" src="slika.jpg" style="border-radius: 15%"> -->
         <h1 style="font-size: 20px; padding: 10px">Name: {{ displayName }}</h1> 
         <h2 style="font-size: 20px">Location: {{ newLocation }}</h2> 
         <p style="font-size: 15px">E-mail: {{ userEmail }}</p> 
       </div>
       <div class="button">
-        <!-- 
-          <div v-if="user = firebase.auth().currentUser">
-            <router-link class="btn btn-primary mt-5" :to="{ name: 'edit' }">
-              Edit Profile
-            </router-link>
-            <button type="file" class="btn btn-primary mt-5">Friend List</button>
-          </div>
-          <div v-else>
-            <router-link to="/friends(nepostojeći link)">
-              <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Add Friend</button>
-            </router-link>
-            <router-link to="/request(nepostojeći link)">
-              <button type="file" class="btn btn-primary mt-5">Send call request</button>
-            </router-link>
-          </div>
-        -->
         <router-link to="/edit">
           <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Edit Profile</button>
         </router-link>
@@ -54,9 +38,6 @@
       <h4 style="float: left; padding: 40px">Bio: </h4>
       <div class="bio">
          <p style="font-size: 15px">{{ newBio }}</p> 
-        <!-- <p style="font-size: 15px">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p> -->
       </div>
     </div>
   </div>
@@ -75,26 +56,18 @@ export default {
   mounted () { 
       
     var user = firebase.auth().currentUser;
-    var email, bio, location, username;      //newImageUrl, uid, emailVerified;
+    var email, bio, location, username, picture;     
 
     if (user != null) {
       username = user.displayName;
       email = user.userEmail;
       bio = user.newBio;
       location = user.newLocation;
-      // username = user.userName;
-      /*newImageUrl = user.newImageUrl;
-      emailVerified = user.emailVerified;
-      uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                   // this value to authenticate with your backend server, if
-                   // you have one. Use User.getToken() instead.*/
+      picture = user.imageData;
     }
   }
 }
 </script>
-
-
-
 
 
 

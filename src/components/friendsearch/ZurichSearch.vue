@@ -2,20 +2,24 @@
     <div class="searchfriends">
         <h2>Users:</h2>
         <ul id="search-friends-list"></ul>
+        <div class="button" style="float: left; padding: 30px">
+          <router-link to="/">       
+            <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to clocks</button>
+          </router-link> 
+          <router-link to="/zurichprofile">       
+            <button type="file" class="btn btn-primary mt-5" style="float: left; margin-right: 15px">Go back to profile</button>
+          </router-link> 
+        </div> 
     </div>
-        <!--
-        <div>
-            <p>{{ displayName }} {{ newLocation }} {{ userEmail }}</p>  (za displayName dodat router-link)
-        </div> -->
 </template>
 
 
 <script>
 export default {
-    mounted (){
+  mounted (){
     const searchFreindsList = document.querySelector('#search-friends-list');
 
-    // create element & render users
+    
     function renderUsers(doc){
       let li = document.createElement('li');
       let displayName = document.createElement('span');
@@ -26,13 +30,13 @@ export default {
       displayName.textContent = doc.data().displayName;
       newLocation.textContent = doc.data().newLocation;
 
-      /*<router-link to="/yourprofile">*/li.appendChild(displayName)/*</router-link>*/;
+      li.appendChild(displayName);
       li.appendChild(newLocation);
 
       searchFreindsList.appendChild(li);
     }
 
-    // getting data
+    
     db.collection('users').where('newLocation', '==', 'Zurich').get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         renderUsers(doc);
