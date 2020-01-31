@@ -32,14 +32,6 @@
 </template>
 
 
-<!--
-<script>
-export default {
-  
-}
-
-</script>
--->
 
 <style>
   .pozadinica{
@@ -60,51 +52,9 @@ export default {
     float: left; 
     width: 70%; 
     height: 50%; 
-    /*border-width: 2px; 
-    border-color: rgb(243, 237, 237); 
-    border-style: solid;
-    border-radius: 2px;*/
+
   }
 
 </style>
 <!--
 
-izvučeno sa github-a od tankovića
-
-<script>
-import { mapGetters } from "vuex";
-import {
-  FETCH_PROFILE,
-  FETCH_PROFILE_FOLLOW,
-  FETCH_PROFILE_UNFOLLOW
-} from "@/store/actions.type";
-export default {
-  name: "RwvProfile",
-  mounted() {
-    this.$store.dispatch(FETCH_PROFILE, this.$route.params);
-  },
-  computed: {
-    ...mapGetters(["currentUser", "profile", "isAuthenticated"])
-  },
-  methods: {
-    isCurrentUser() {
-      if (this.currentUser.username && this.profile.username) {
-        return this.currentUser.username === this.profile.username;
-      }
-      return false;
-    },
-    follow() {
-      if (!this.isAuthenticated) return;
-      this.$store.dispatch(FETCH_PROFILE_FOLLOW, this.$route.params);
-    },
-    unfollow() {
-      this.$store.dispatch(FETCH_PROFILE_UNFOLLOW, this.$route.params);
-    }
-  },
-  watch: {
-    $route(to) {
-      this.$store.dispatch(FETCH_PROFILE, to.params);
-    }
-  }
-};
-</script> -->

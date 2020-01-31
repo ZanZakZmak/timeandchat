@@ -1,22 +1,5 @@
 <template>
 
-  <!-- 
-
-  https://vuex.vuejs.org/guide/actions.html
-  https://vuex.vuejs.org/guide/getters.html
-  istražit o vuex-u i o gettersima
-
-
-  https://router.vuejs.org/guide/essentials/dynamic-matching.html#catch-all-404-not-found-route
-  istražit o this.$route.params
-
-  bezveze linkovi: vidit po potrebi da li će mi trebat:
-  https://stackoverflow.com/questions/56070330/get-current-user-login-user-information-in-profile-page-firebase-and-vuejs
-  https://stackoverflow.com/questions/54212080/how-to-get-currentuser-on-first-load-in-firebase-auth-without-requesting
-  istražit o firebase v-if current user
-
-  -->
-
   <div class="yourprofile" style="padding: 30px">
     <div class="profil-podaci" style="float: left">  <!-- col-3 float-left pr-3 -->
       <div class="pic" style="float: left">

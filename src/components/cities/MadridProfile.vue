@@ -1,7 +1,3 @@
-<!-- Ova vue datoteka se povezuje sa "ProfilesCity"; ovaj dio se treba prikazat kada se odabere 
-     opcija grada u Home.vue (ispod satova) 
- -->
-
 <template>
   <div class="madridrofile" style="padding: 30px">
     <div class="col-3 float-left pr-3">

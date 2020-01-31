@@ -50,7 +50,7 @@ export default {
               this.newLocation = doc.data().newLocation;
             } else {
               // doc.data() will be undefined in this case
-              console.log("No such document!");
+              console.log("No document!");
             }
           });
 
@@ -98,11 +98,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  // testirat sa color: black;
   color: black;
 }
-
-// TREBA MALO #NAV SREDIT: HOVER, ACTIVE, BJELA POZADINA, CRNI FONT, ITD...
 
 #nav {
   padding: 10px;

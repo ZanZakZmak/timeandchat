@@ -76,16 +76,9 @@
   
 </template>
 
-<!-- 
--> google: firebase updates user but not save
--> https://stackoverflow.com/questions/54912180/new-user-not-saved-in-firebase-using-angular
--> https://firebase.google.com/docs/reference/js/firebase.User.html#updateprofile -> js firebase
--> https://firebase.google.com/docs/auth/web/manage-users#update_a_users_profile -> web firebase
--->
 
 
 <script>
-//import YourProfile from 'views/YourProfile.vue'
 import store from '@/store.js'
 export default {
   data () {
@@ -116,92 +109,18 @@ export default {
         console.log(error);
       });
 
-
+      /*
       user.updateProfile({imageData: null}).then(function() {
-        // Profile updated successfully!
-        // "Jane Q. User", hasn't changed.
+
         var displayName = user.displayName;
         // Now, this is null.
         var photoURL = user.photoURL;
       }, function(error) {
       // An error happened.
-      });
+      });*/
     },
-    /*
-     postNewImage() {
-      this.imageData.generateBlob(data => {
-        if (data != null) {
-          let imageName = this.userEmail + "/" + "/slika.png"; //let imageName = this.userEmail + "/slika.png";
-          storage.ref(imageName).put(blobData).then(result => { 
-            result.ref.getDownloadURL().then(url => {
-            db.collection("users")
-              .add({
-                postedBy: this.userEmail,
-                //time: Date.now(),
-                url: url
-              })
-              .then(docRef => {
-                console.log("Document written with ID: ", docRef.id);
-                this.imageData = null;
-              })
-              .catch(e => {
-                console.error("Error adding document: ", error);
-              });
-            })
-            .catch(e=> {
-             console.error(e)
-            })
-          })
-          .catch(e => {
-          console.error(e)
-          })
-        }
-      });
-      //this.postImageUrl = "";
-    }*/
+
   },
-
-  /*
-
-    /*postNewImage() {
-      console.log("Dodajem novu sliku:", this.newImageUrl);
-      // ovdje će ići Firebase kod
-      db.collection("profileimage").add({
-        url: this.newImageUrl,
-        email: this.userEmail,
-        posted_at: Date.now()
-      })
-    },
-
-    postNewBio() {
-      console.log("Dodajem novu opis:", this.newBio);
-      db.collection("profilebio").add({
-        bio:  this.newBio,
-        email: this.userEmail,
-        posted_at: Date.now()
-      })
-    }
-
-
-  },*/
-  
- /* methods: { 
-    post () {
-      db.collection("postNewBio").add({ url: this.newUrl, email: this.userEmail})
-      this.newUrl = ''
-    },
-    /*postNewBio (){
-      var user = firebase.auth().currentUser;
-      user.updateProfile({
-        //displayName: "Jane Q. User",
-        //newImageUrl: "https://example.com/jane-q-user/profile.jpg"
-        newBio: ""
-      }).then(function() {
-        console.log("User updated");
-      }).catch(function(error) {
-        console.log(error);
-      });
-    }*/
 }
 
 </script>
@@ -245,19 +164,5 @@ form label {
     color: #999999;
     font-weight: 400;
 }
-/*
-.form-horizontal .form-group {
-  margin-left: -15px;
-  margin-right: -15px;
-}*/
-/*
-@media (min-width: 768px) {
-  .form-horizontal .control-label {
-    text-align: right;
-    margin-bottom: 0;
-    padding-top: 7px;
-  }
-}*/
-
 
 </style>

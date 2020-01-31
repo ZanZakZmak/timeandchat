@@ -18,12 +18,13 @@
           
             <div class="form-group">
               <label for="passwordField">Password</label>
-              <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Password">
+              <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="At least 6 digets.">
             </div>
 
             <div class="form-group">
               <label for="confirmPasswordField">Confirm Password</label>
               <input v-model="passwordConfirmation" type="password" class="form-control" id="confirmPasswordField" placeholder="Confirm password">
+               <!-- <small id="passwordHelp" class="form-text text-muted"></small> -->
             </div>
             
             <div class="form-group">
